@@ -1,24 +1,7 @@
-/*
-02. variables
-*/
-:root {
-    --orange: hsl(36, 80%, 50%);
-    --white: hsl(0, 0%, 100%);
-    --WHITE: hsl(0, 0%, 100%);
-    --BLACK: hsl(0, 0%, 0%);
-    --black-90: hsl(0, 0%, 10%);
-    --black-70: hsl(0, 0%, 30%);
-    --black-alpha-40: hsl(0, 0%, 0% ,0.4);
-    --yellow-light: hsl(44, 95%, 83%);
-    --green-light: hsl(158, 68%, 75%);
-    --red-light: hsl(0, 84%, 80%);
-    --orange-light: hsl(22, 85%, 80%);
-    --select-box-bg-color: hsl(0, 0%, 100%);
-    --border-color-1: hsl(0, 0%, 90%);
+body {
+    padding-top: 5rem;
 }
-/*
-04. base
-*/
-body{
-    background-color: var(--body-bg-color);
+.starter-template{
+    padding: 3rem 1.5rem;
+    text-align: center;
 }
