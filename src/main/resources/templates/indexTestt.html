@@ -1,0 +1,40 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/commonn :: head">
+</head>
+<body>
+<!--main wrapper-->
+<div class="main-wrapper">
+
+    <!--헤더 시작-->
+    <header class="header">
+        <div class="container">
+            <div class="header-main d-flex">
+                <div class="header-logo bg-primary">
+                    <a href="indexTestt.html"><span>Commu</span>nity</a>
+                </div>
+                <button type="button" class="header-hamburger-btn js-header-menu-toggler">
+                    <span></span>
+                </button>
+                <div class="header-backdrop js-header-backdrop"></div>
+                <nav class="header-menu js-header-menu bg-info">
+                    <button type="button" class="header-close-btn js-header-menu-toggler">
+                        <i class="fas fa-times">CLOSE</i>
+                    </button>
+                    <ul class="menu">
+                        <li class="menu-item"><a href="indexTestt.html">홈</a></li>
+                        <li class="menu-item"><a href="">게시판</a></li>
+                        <li class="menu-item"><a href="">로그인</a></li>
+                        <li class="menu-item"><a href="">..</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+</div>
+
+
+<script th:replace="fragments/commonn :: script"></script>
+<script th:replace="fragments/commonn :: script2"></script>
+</body>
+</html>

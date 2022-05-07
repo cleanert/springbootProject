@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--헤드 COMMON-->
+<head th:fragment="head">
+  <title>SpringProject</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link class="js-color-style" href="color-1.css" th:href="@{color-1.css}" rel="stylesheet">
+  <link href="bootstrap.min.css" th:href="@{bootstrap.min.css}" rel="stylesheet">
+  <link href="font-awesome.css" th:href="@{font-awesome.css}" rel="stylesheet">
+  <link href="/static/style.css" th:href="@{style.css}" rel="stylesheet">
+</head>
+
+<script th:fragment="script" src="bootstrap.bundle.min.js" th:src="@{bootstrap.bundle.min.js}"></script>
+<script th:fragment="script2" src="main.js" th:src="@{main.js}"></script>
