@@ -1,0 +1,122 @@
+/* 변수 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+:root{
+    --orange: hsl(36, 80%, 50%);
+    --white: hsl(0, 0%, 100%);
+    --WHITE: hsl(0, 0%, 100%);
+    --BLACK: hsl(0, 0%, 0%);
+    --black-90: hsl(0, 0%, 10%);
+    --black-70: hsl(0, 0%, 30%);
+    --black-alpha-40: hsl(0, 0%, 0%, 0.4);
+    --yellow-light: hsl(44, 95%, 83%);
+    --green-light: hsl(158, 68%, 75%);
+    --red-light: hsl(0, 84%, 80%);
+    --orange-light: hsl(22, 85%, 80%);
+    --select-box-bg-color: hsl(0, 0%, 100%);
+    --border-color-1: hsl(0, 0%, 90%);
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 기본 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+body {
+    background-color: var(--body-bg-color);
+    font-family: 'Poppins', sans-serif;
+    font-family: 'BMJUA';
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--black-70);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+/*.menu li{
+    font-family: 'BMHANNAPro';
+}*/
+a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+a:hover{
+    color: var(--main-color);
+}
+img{
+    max-width: 100%;
+}
+ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+::selection{
+    color: var(--WHITE);
+    background-color: var(--main-color);
+}
+/* 헤더 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+.header{
+    border-bottom: 1px solid var(--border-color-2);
+}
+.header-logo a{
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--black-70);
+}
+.header-logo span{
+    color: var(--main-color);
+}
+.header .menu-item{
+    display: inline-block;
+    margin-right: 40px;
+    position: relative;
+}
+.header .menu-item > a{
+    display: block;
+    padding: 26px 0;
+    color: var(--black-70);
+    transition: color 0.3s ease;
+}
+.header .sub-menu-item a:hover,
+.header .menu-item:hover > a {
+    color: var(--main-color);
+}
+.header .menu-item > a i{
+    font-size: 13px;
+    margin-left: 3px;
+    pointer-events: none;
+}
+.header .sub-menu {
+    position: absolute;
+    top: 100%;
+    background-color: var(--white);
+    left: 0;
+    width: 120px;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+}
+@media(min-width: 992px){
+    .header .menu-item:hover > .sub-menu{
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.header .sub-menu-item a{
+    display: block;
+    padding: 10px 20px;
+    color: var(--black-90);
+    transition: color 0.3s ease;
+}
+.header-backdrop,
+.header-close-btn,
+.header-hamburger-btn{
+    display: none;
+}

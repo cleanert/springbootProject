@@ -9,23 +9,29 @@
     <!--헤더 시작-->
     <header class="header">
         <div class="container">
-            <div class="header-main d-flex">
-                <div class="header-logo bg-primary">
-                    <a href="indexTestt.html"><span>Commu</span>nity</a>
+            <div class="header-main d-flex justify-content-between align-items-center">
+                <div class="header-logo">
+                    <a th:href="@{/}"><span>Comm</span>unity</a>
                 </div>
                 <button type="button" class="header-hamburger-btn js-header-menu-toggler">
                     <span></span>
                 </button>
                 <div class="header-backdrop js-header-backdrop"></div>
-                <nav class="header-menu js-header-menu bg-info">
+                <nav class="header-menu js-header-menu">
                     <button type="button" class="header-close-btn js-header-menu-toggler">
-                        <i class="fas fa-times">CLOSE</i>
+                        <i class="fas fa-times"></i>
                     </button>
                     <ul class="menu">
-                        <li class="menu-item"><a href="indexTestt.html">홈</a></li>
-                        <li class="menu-item"><a href="">게시판</a></li>
+                        <li class="menu-item"><a th:href="@{/}">홈</a></li>
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#" class="js-toggle-sub-menu">게시판 <i class="fas fa-chevron-down"></i></a>
+                            <ul class="sub-menu js-sub-menu">
+                                <li class="sub-menu-item"><a href="">자유게시판</a></li>
+                                <li class="sub-menu-item"><a href="">으...음</a></li>
+                            </ul>
+                        </li>
                         <li class="menu-item"><a href="">로그인</a></li>
-                        <li class="menu-item"><a href="">..</a></li>
+                        <li class="menu-item"><a href="">회원가입</a></li>
                     </ul>
                 </nav>
             </div>
@@ -34,7 +40,7 @@
 </div>
 
 
-<script th:replace="fragments/commonn :: script"></script>
-<script th:replace="fragments/commonn :: script2"></script>
+<script src="bootstrap.bundle.min.js" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+<script src="main.js" th:src="@{/js/main.js}"></script>
 </body>
 </html>
