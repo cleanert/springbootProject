@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
 <!--헤드 COMMONN-->
-<head th:fragment="head">
-  <title>SpringProject</title>
+<head th:fragment="head(title)">
+  <title th:text="${title}">SpringProject</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,4 +11,131 @@
   <link th:href="@{/css/fa.css}" rel="stylesheet">
   <link th:href="@{/css/style.css}" rel="stylesheet">
 </head>
+<body>
+    <!--main wrapper-->
+<div class="main-wrapper">
+  <header class="header" th:fragment="header">
+    <div class="container">
+        <div class="header-main d-flex justify-content-between align-items-center">
+            <div class="header-logo">
+                <a th:href="@{/}"><span>Comm</span>unity</a>
+            </div>
+            <button type="button" class="header-hamburger-btn js-header-menu-toggler">
+                <span></span>
+            </button>
+            <div class="header-backdrop js-header-backdrop"></div>
+            <nav class="header-menu js-header-menu">
+                <button type="button" class="header-close-btn js-header-menu-toggler">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="menu">
+                    <li class="menu-item"><a th:href="@{/}">홈</a></li>
+                    <li class="menu-item menu-item-has-children">
+                        <a href="#" class="js-toggle-sub-menu">게시판 <i class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu js-sub-menu">
+                            <li class="sub-menu-item"><a th:href="@{/board/FreeBoard.html}">자유게시판</a></li>
+                            <li class="sub-menu-item"><a href="">으...음</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="">로그인</a></li>
+                    <li class="menu-item"><a href="">음음..</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+  </header>
+
+  <div class="banner d-flex align-items-center" th:fragment="banner">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="banner-text">
+                    <h2 class="mb-3">An investment in knowledge pays the best interest.</h2>
+                    <h1 class="mb-3 text-capitalize">best online community site</h1>
+                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, dolore sequi ea accusantium, doloribus odit exercitationem eos nam sint quaerat iure quasi ab. Alias molestias, harum placeat aut maiores ad.</p>
+                    <a href="#" class="btn btn-theme">회원가입</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="banner-img">
+                    <div class="circular-img">
+                        <div class="circular-img-inner">
+                            <div class="circular-img-circle"></div>
+                            <img th:src="@{/image/yuri9.png}" alt="banner img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <footer class="footer" th:fragment="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="footer-item">
+                        <h3 class="footer-logo"><span>comm</span>unity</h3>
+                        <ul>
+                            <li><a href="#">about</a></li>
+                            <li><a href="#">what we do</a></li>
+                            <li><a href="#">bbbbb</a></li>
+                            <li><a href="#">bbbbb</a></li>
+                            <li><a href="#">bbbbb</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="footer-item">
+                        <h3>learning</h3>
+                        <ul>
+                            <li><a href="#">get the app</a></li>
+                            <li><a href="#">test</a></li>
+                            <li><a href="#">ddddd</a></li>
+                            <li><a href="#">ddddd</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="footer-item">
+                        <h3>more</h3>
+                        <ul>
+                            <li><a href="#">aaaaaaa</a></li>
+                            <li><a href="#">bbbbbb</a></li>
+                            <li><a href="#">ccccc</a></li>
+                            <li><a href="#">dddddddd</a></li>
+                            <li><a href="#">eeeeeee</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="footer-item">
+                        <h3>get in touch</h3>
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook social-icon"></i> facebook</a></li>
+                            <li><a href="#"><i class="fab fa-twitter social-icon"></i> twitter</a></li>
+                            <li><a href="#"><i class="fab fa-instagram social-icon"></i> instagram</a></li>
+                            <li><a href="#"><i class="fab fa-youtube social-icon"></i> youtube</a></li>
+                            <li><a href="#"><i class="fab fa-linkedin social-icon"></i> linkedin</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="m-0 py-4 text-center">copyright &copy;2022 Lim Jeong Min</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+
+<script src="bootstrap.bundle.min.js" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+<script src="main.js" th:src="@{/js/main.js}"></script>
+</body>
+</html>
 

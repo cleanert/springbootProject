@@ -1,6 +1,6 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/commonn :: head('홈')">
+<head th:replace="fragments/commonn :: head('자유게시판')">
 </head>
 <body>
 <!--메인 -->
@@ -9,21 +9,15 @@
     <header class="header" th:replace="fragments/commonn :: header">
     </header>
     <!-- 헤더 끝 -->
-
-    <!-- 베너 시작 -->
+    
     <div class="banner d-flex align-items-center" th:replace="fragments/commonn :: banner">
     </div>
-    <!-- 배너 끝 -->
 
-    <!--푸터-->
     <footer class="footer" th:replace="fragments/commonn :: footer">
     </footer>
     <!-- 푸터 끝 -->
 </div>
     
-
-
-
 <script src="bootstrap.bundle.min.js" th:src="@{/js/bootstrap.bundle.min.js}"></script>
 <script src="main.js" th:src="@{/js/main.js}"></script>
 </body>
