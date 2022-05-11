@@ -1,4 +1,4 @@
-/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 색 변수 */
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 색 변수*/
 :root{
     --orange: hsl(36, 80%, 50%);
     --white: hsl(0, 0%, 100%);
@@ -32,9 +32,6 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 }
-/*.menu li{
-    font-family: 'BMHANNAPro';
-}*/
 a {
     color: var(--main-color);
     text-decoration: none;
@@ -57,6 +54,18 @@ h1,h2,h3,h4,h5,h6{
 ::selection{
     color: var(--WHITE);
     background-color: var(--main-color);
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 테마 색 변경 */
+.style-switcher{
+    width: 250px;
+    position: fixed;
+    height: 100%;
+    background-color: var(--white);
+    right: 0;
+    top: 0;
+    z-index: 10;
+    padding: 30px;
+    box-shadow: var(--shadow);
 }
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 헤더  */
 .header{

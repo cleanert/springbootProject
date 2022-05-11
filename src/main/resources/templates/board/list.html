@@ -19,7 +19,9 @@
     <!-- 헤더 끝 -->
 
     <!-- 베너 시작 -->
-    <div class="banner d-flex align-items-center" th:replace="fragments/banner :: banner">
+    <div class="banner d-flex align-items-center">
+        <h2>테스트 게시판</h2>
+        <div>게사판 건수 : <span th:text="${#lists.size(articles)}"></span></div>
     </div>
     <!-- 배너 끝 -->
 
@@ -28,6 +30,11 @@
     </footer>
     <!-- 푸터 끝 -->
 </div>
+
+<!-- 테마 색 변경 -->
+<div class="style-switcher js-style-switcher" th:replace="fragments/styleSwitcher :: styleSwitcher">
+</div>
+    <!-- 테마 색 변경 끝 -->
     
 
 
