@@ -18,12 +18,39 @@
     </header>
     <!-- 헤더 끝 -->
 
-    <!-- 베너 시작 -->
-    <div class="banner d-flex align-items-center">
-        <h2>테스트 게시판</h2>
-        <div>게사판 건수 : <span th:text="${#lists.size(articles)}"></span></div>
+    <div class="banner d-flex align-items-center" th:fragment="banner">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="container">
+                        <h2>테스트</h2>
+                        <div> 게시판 건수 : <span th:text="${#lists.size(articles)}"></span></div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">작성자</th>
+                                    <th scope="col">게시일</th>   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="article : ${articles}">
+                                    <td th:text="${article.id}"></td>
+                                    <td th:text="${article.title}"></td>
+                                    <td th:text="${article.member_Id}"></td>
+                                    <td th:text="${article.reg_Date}"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- 배너 끝 -->
+    
+
 
     <!--푸터-->
     <footer class="footer" th:replace="fragments/footer :: footer"> 

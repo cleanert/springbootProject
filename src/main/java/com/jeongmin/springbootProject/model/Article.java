@@ -1,10 +1,11 @@
 package com.jeongmin.springbootProject.model;
 import lombok.Data;
+import lombok.Getter;
 
 import javax.persistence.*;
 
 @Entity
-@Data
+@Getter
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
