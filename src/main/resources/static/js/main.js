@@ -1,4 +1,4 @@
-/* 테마 컬러 변경 */
+/* 테마 컬러 변경 사이드 바 모션 */
 function styleSwitcherToggle(){
     const styleSwitcher = document.querySelector(".js-style-switcher"),
     styleSwitcherToggle = document.querySelector(".js-style-switcher-toggler");
@@ -13,7 +13,7 @@ function styleSwitcherToggle(){
 
 styleSwitcherToggle();
 
-/* colors */
+/* 색 변경  */
 function themeColors(){
     const colorStyle = document.querySelector(".js-color-style"),
     themeColorsContainer = document.querySelector(".js-theme-colors");
@@ -46,3 +46,26 @@ function setColor(){
     }
 }
 themeColors();
+
+/* 다크 모드, 라이트 모드 */
+function themeLightDark(){
+    const darModeCheckBox = document.querySelector(".js-dark-mode");
+
+    darModeCheckBox.addEventListener("click", function(){
+        if(this.checked){
+            localStorage.setItem("theme-dark", "true");
+        } else {
+            localStorage.setItem("theme-dark", "false");
+        }
+        themeMode();
+    });
+    
+    function themeMode(){
+        if(localStorage.getItem("theme-dark") === "false"){
+            document.body.classList.remove("t-dark");
+        } else {
+            document.body.classList.add("t-dark");
+        }
+    }
+}
+themeLightDark();

@@ -5,36 +5,35 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link class="js-color-style" th:href="@{/css/color-1.css}" rel="stylesheet">
-        <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
         <link th:href="@{/css/fa.css}" rel="stylesheet">
+        <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
         <link th:href="@{/css/style.css}" rel="stylesheet">
+        <link class="js-color-style" th:href="@{/css/color-1.css}" rel="stylesheet">
     </head>
 <body>
-<!--메인 -->
-<div class="main-wrapper">
-    <!--헤더 시작-->
-    <header class="header" th:replace="fragments/header :: header">
-    </header>
-    <!-- 헤더 끝 -->
+    <!--메인 -->
+    <div class="main-wrapper">
+        <!--헤더 시작-->
+        <header class="header" th:replace="fragments/header :: header">
+        </header>
+        <!-- 헤더 끝 -->
 
-    <!-- 베너 시작 -->
-    <div class="banner d-flex align-items-center" th:replace="fragments/banner :: banner">
-    </div>
-    <!-- 배너 끝 -->
+        <!-- 베너 시작 -->
+        <div class="banner d-flex align-items-center" th:replace="fragments/banner :: banner">
+        </div>
+        <!-- 배너 끝 -->
 
-    <!--푸터-->
-    <footer class="footer" th:replace="fragments/footer :: footer"> 
-    </footer>
-    <!-- 푸터 끝 -->
-</div>
-    <!-- 테마 색 변경 -->
-    <div class="style-switcher js-style-switcher" th:replace="fragments/styleSwitcher :: styleSwitcher">
+        <!--푸터-->
+        <footer class="footer" th:replace="fragments/footer :: footer"> 
+        </footer>
+        <!-- 푸터 끝 -->
     </div>
-    <!-- 테마 색 변경 끝 -->
+        <!-- 테마 색 변경 -->
+        <div class="style-switcher js-style-switcher" th:replace="fragments/styleSwitcher :: styleSwitcher">
+        </div>
+        <!-- 테마 색 변경 끝 -->
     
-
-<script src="bootstrap.bundle.min.js" th:src="@{/js/bootstrap.bundle.min.js}"></script>
-<script src="main.js" th:src="@{/js/main.js}"></script>
+    <script src="bootstrap.bundle.min.js" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+    <script src="main.js" th:src="@{/js/main.js}"></script>
 </body>
 </html>
