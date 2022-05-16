@@ -47,7 +47,7 @@ function setColor(){
 }
 themeColors();
 
-/* 다크 모드, 라이트 모드 */
+/* 다크 모드 */
 function themeLightDark(){
     const darModeCheckBox = document.querySelector(".js-dark-mode");
 
@@ -67,5 +67,44 @@ function themeLightDark(){
             document.body.classList.add("t-dark");
         }
     }
+    if(localStorage.getItem("theme-dark") !== null){
+        themeMode();
+    } 
+    if(document.body.classList.contains("t-dark")){
+        darModeCheckBox.checked = true;
+    }
+    
 }
 themeLightDark();
+
+/* 글래시(투명) 모드 */
+function themeGlassEffect(){
+    const glassEffectCheckbox = document.querySelector(".js-glass-effect"),
+    glassStyle = document.querySelector(".js-glass-style");
+
+    glassEffectCheckbox.addEventListener("click", function(){
+        if(this.checked){
+            localStorage.setItem("glass-effect", "true");
+        } else {
+            localStorage.setItem("glass-effect", "false");
+        }
+        glass();
+    });
+
+    function glass(){
+        if(localStorage.getItem("glass-effect") === "true"){
+            glassStyle.removeAttribute("disabled");
+        } else {
+            glassStyle.disabled = true;
+        }
+    }
+    if(localStorage.getItem("glass-effect") !== null){
+        glass();
+    } 
+
+    if(!glassStyle.hasAttribute("disabled")){
+        glassEffectCheckbox.checked = true;
+    }
+    
+}
+themeGlassEffect();
