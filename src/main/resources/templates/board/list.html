@@ -13,7 +13,7 @@
         <div class="banner d-flex align-items-center">
             <div class="container">
             <h2>테스트</h2>
-            <div> 게시판 건수 : <span th:text="${#lists.size(articles)}"></span></div>
+            <div> 게시판 건수 : <span th:text="${#lists.size(boards)}"></span></div>
             <table class="table table-sm trr">
                 <thead>
                     <tr>
@@ -24,16 +24,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="article : ${articles}">
-                        <td th:text="${article.id}"></td>
-                        <td th:text="${article.title}"></td>
-                        <td th:text="${article.member_Id}"></td>
-                        <td th:text="${article.reg_Date}"></td>
+                    <tr th:each="board : ${boards}">
+                        <td th:text="${board.id}"></td>
+                        <td><a th:text="${board.title}" th:href="@{/board/write(id=${board.id})}"></a></td>
+                        <td>임정민</td>
+                        <td th:text="${board.reg_Date}"></td>
                     </tr>
                 </tbody>
             </table>
             <div class="text-right">
-                <a class="btn btn-theme" th:href="@{/board/write}">테스트 쓰기</a>
+                <a type="button" class="btn btn-theme" th:href="@{/board/write}">테스트 쓰기</a>
             </div>
             </div>
         </div>

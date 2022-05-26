@@ -12,14 +12,22 @@
         <!-- 테이블 -->
         <div class="banner d-flex align-items-center">
             <div class="container">
-                <form action="#" th:action="@{/board/write}" th:object="${article}" method="post">
+                <form action="#" th:action="@{/board/write}" th:object="${board}" method="post">
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">테스트 제목</label>
-                    <input type="text" class="form-control" id="title" th:field="*{title}" placeholder="제목">
-                  </div>
+                    <label for="title">테스트 제목</label>
+                    <input type="text" class="form-control" 
+                        th:classappend="${#fields.hasErrors('title')} ? 'is-invalid'" id="title" th:field="*{title}" placeholder="제목">
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">
+                        제목 오류.
+                    </div>
+                </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">테스트 내용</label>
-                    <textarea class="form-control" id="body" th:field="*{body}" rows="3"></textarea>
+                    <label for="content">테스트 내용</label>
+                    <textarea class="form-control" 
+                        th:classappend="${#fields.hasErrors('content')} ? 'is-invalid'" id="content" rows="3" th:field="*{content}"></textarea>
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('content')}" th:errors="*{content}">
+                        내용 오류.
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-theme">테스트 확인</button>
                 </form>

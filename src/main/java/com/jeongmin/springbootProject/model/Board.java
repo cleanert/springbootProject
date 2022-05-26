@@ -1,19 +1,27 @@
 package com.jeongmin.springbootProject.model;
-import lombok.Data;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
+
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String regDate;
-    private String updateDate;
-    private String code;
-    private String name;
+    private Long id;
+    @NotNull
+    @Size(min=2, max=30)
+    private String title;
+    private String content;
+    private final LocalDateTime reg_Date = LocalDateTime.now();
 }
