@@ -3,6 +3,7 @@ package com.jeongmin.springbootProject.controller;
 
 import com.jeongmin.springbootProject.model.Board;
 import com.jeongmin.springbootProject.repository.BoardRepository;
+import com.jeongmin.springbootProject.validator.BoardValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,10 @@ public class BoardController {
 
     @Autowired
     private BoardRepository boardRepository;
+    @Autowired
+    private BoardValidator boardValidator;
+
+
 //  게시판 리스트
     @GetMapping("/list")
     public String list(Model model) {
@@ -25,7 +30,7 @@ public class BoardController {
         model.addAttribute("boards", boards);
         return "board/list";
     }
-//  게시판 등록
+
     @GetMapping("/write")
     public String write(Model model) {
         model.addAttribute("board", new Board());
@@ -42,12 +47,15 @@ public class BoardController {
 //        }
 //        return "board/write";
 //    }
-//  게시판 등록
+
     @PostMapping("/write")
     public String writeSubmit(@Valid Board board, BindingResult bindingResult){
-       if (bindingResult.hasErrors()) {
+        boardValidator.validate(board, bindingResult);
+        if (bindingResult.hasErrors()) {
            return "board/write";
-       }
+        }
+
+        //  게시판 등록
         boardRepository.save(board);
         return "redirect:/board/list";
     }

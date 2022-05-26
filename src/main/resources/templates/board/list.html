@@ -26,7 +26,8 @@
                 <tbody>
                     <tr th:each="board : ${boards}">
                         <td th:text="${board.id}"></td>
-                        <td><a th:text="${board.title}" th:href="@{/board/write(id=${board.id})}"></a></td>
+                        <td><a th:text="${board.title}"></a></td>
+                        <!-- <td><a th:text="${board.title}" th:href="@{/board/write(id=${board.id})}"></a></td> -->
                         <td>임정민</td>
                         <td th:text="${board.reg_Date}"></td>
                     </tr>

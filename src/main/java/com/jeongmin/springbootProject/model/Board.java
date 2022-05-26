@@ -20,7 +20,7 @@ public class Board {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    @Size(min=2, max=30)
+    @Size(min=2, max=30, message = "30자 이하로 적어..")
     private String title;
     private String content;
     private final LocalDateTime reg_Date = LocalDateTime.now();
