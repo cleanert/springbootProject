@@ -46,7 +46,7 @@ public class BoardController {
 //            model.addAttribute("board", board);
 //        }
 //        return "board/write";
-//    }
+//    } 이건 버리는 코드
 
     @PostMapping("/write")
     public String writeSubmit(@Valid Board board, BindingResult bindingResult){
