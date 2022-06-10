@@ -17,9 +17,6 @@ public class BoardValidator implements Validator {
     public void validate(Object obj, Errors errors) {
         Board board = (Board) obj;
 
-//        if(ObjectUtils.isEmpty(board.getTitle())) {
-//            errors.rejectValue("title", "key", "제목 적어");
-//        }
 
         if(ObjectUtils.isEmpty(board.getContent())) {
             errors.rejectValue("content", "key", "내용 적어");
